@@ -66,7 +66,8 @@ class LowPassFilter
 
 };
 
-// -----------------------------------------------------------------
+// Copyright (c) AdHawk Microsystems Inc.
+// All rights reserved.-------------------------------------------------------------
 
 class OneEuroFilter
 {

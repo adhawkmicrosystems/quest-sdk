@@ -1,4 +1,5 @@
-// Copyright (c) AdHawk Microsystems Inc. All rights reserved.
+// Copyright (c) AdHawk Microsystems Inc.
+// All rights reserved.
 using UnityEngine;
 using System;
 using System.Collections.Generic;

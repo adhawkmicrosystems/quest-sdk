@@ -1,4 +1,5 @@
-﻿// Copyright (c) AdHawk Microsystems Inc. All rights reserved.using System.Collections;
+﻿// Copyright (c) AdHawk Microsystems Inc.
+// All rights reserved.using System.Collections;
 using System;
 using System.Collections.Generic;
 using System.Net;

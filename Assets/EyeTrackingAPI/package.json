@@ -6,7 +6,7 @@
 		"prepublish": "npm version patch"
 	},
 	"unity": "2021.1",
-	"description": "Copyright (c) AdHawk Microsystems Inc. All rights reserved.\n\nThis is the unity package that contains the API used to communicate with the backend server that handles eyetracking requests connected to an eyetracking device.\n\nMost functions you will need will be found by using `EyeTrackerApi.Instance` object. This needs to be added to a camera in your scene.\n\nSee Documentation folder for help.",
+	"description": "----\n\nThis is the unity package that contains the API used to communicate with the backend server that handles eyetracking requests connected to an eyetracking device.\n\nMost functions you will need will be found by using `EyeTrackerApi.Instance` object. This needs to be added to a camera in your scene.\n\nSee Documentation folder for help.",
 	"hideInEditor": false,
 	"keywords": [
 		"package",

@@ -1,4 +1,5 @@
-﻿// Copyright (c) AdHawk Microsystems Inc. All rights reserved.
+﻿// Copyright (c) AdHawk Microsystems Inc.
+// All rights reserved.
 namespace AdhawkApi.Numerics.Filters
 {
     /// <summary>
