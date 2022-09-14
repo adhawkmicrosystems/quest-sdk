@@ -7,21 +7,6 @@ namespace AdhawkApi
 {
     public class DefaultDevice : EyeTrackingDevice
     {
-        /*
-         *      ______ _____       ______ _____     
-         *      |_   _|  _  |      |  _  \  _  |  _ 
-         *        | | | | | |______| | | | | | | (_)
-         *        | | | | | |______| | | | | | |    
-         *        | | \ \_/ /      | |/ /\ \_/ /  _ 
-         *        \_/  \___/       |___/  \___/  (_)
-         * 
-         * - break calibration/validation functions into modular single-function
-         * - use unity input system instead of hard-coded hotkey checks
-         * 
-         */
-
-
-
         /// <summary>
         /// How wide the calibration points should be spread
         /// </summary>
@@ -77,7 +62,6 @@ namespace AdhawkApi
         {
             player = Player.Instance;
             HideTarget();
-            // this is hacky af fix it later, move it all to eyetrackerapi
             EyeTrackerAPI.Streams.Gaze.AddListener((screenGazeData) => {
                 Vector4 timeGaze = EyeTrackerAPI.Instance.GazeVector;
                 timeGaze.w = ((GazeDataStruct)screenGazeData).Timestamp;
