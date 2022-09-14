@@ -1,4 +1,4 @@
-# HtN_AdhawkMicrosystems_Quest2_VR
+# AdHawk Eye Tracking Quest2 SDK + Examples
 
 AdHawk Microsystems template project for our Unity Quest 2 Eyetracking development kit
 
