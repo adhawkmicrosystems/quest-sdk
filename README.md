@@ -20,7 +20,7 @@ This project is designed to run on a computer running Windows 64bit with a discr
 
 The first thing you should do upon setting up your project is to run a build and try it out on the Quest 2 Headset while the headset is in Oculus Link Mode.
 
-There are three main recommended scenes to be building in the following order:
+There are three main recommended scenes that should be added to build-settings in this index order:
 
 0. Intro Scene
     - This scene should be modified with some intro and acts as a general "Press any button to start". This should allow the local backend eyetracking communication server to connect to the headset and start communicating with the application
