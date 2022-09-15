@@ -26,6 +26,8 @@ namespace AdhawkApi
         [Tooltip("Represents the gaze data source. Default is Backend")]
         [SerializeField] private EtSourceType etSource = EtSourceType.Backend;
 
+        [SerializeField] private udpInfo.LogMode AdHawkAnalyticsLogMode = udpInfo.LogMode.BASIC;
+
         // [Tooltip("Will save a log of all udp commands sent to backend (as well as acks recieved)")]
         [HideInInspector] private bool backendLogging = false;
 
@@ -104,6 +106,7 @@ namespace AdhawkApi
             udpClient.RegisterOnConnect(() => {
                 Streams.Gaze.Start();
                 Events.Blink.Start();
+                SetLogMode(AdHawkAnalyticsLogMode);
             });
 
 

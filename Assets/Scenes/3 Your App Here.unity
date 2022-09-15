@@ -678,7 +678,7 @@ GameObject:
   - component: {fileID: 1517199552}
   - component: {fileID: 1517199553}
   m_Layer: 0
-  m_Name: '[ EyeTrackerAPI ]'
+  m_Name: '[ EyeTrackerAPI ] this object is redundant and gets replaced'
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -714,6 +714,7 @@ MonoBehaviour:
   ScreenDPI: 0
   autoSkipInvalidCalibrationPoints: 0
   etSource: 0
+  AdHawkAnalyticsLogMode: 2
   OnConnectEvent:
     m_PersistentCalls:
       m_Calls: []
