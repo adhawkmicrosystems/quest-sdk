@@ -60,55 +60,8 @@ namespace AdhawkApi
             float newOffsetR = ((newIPD / 2.0f) - (baseIPD / 2.0f)) * 1000.0f;
             float newOffsetL = -newOffsetR;
             
-            // convert to mm from meters:
-
-            // first, we need to get the current component offsets:
-            // def get_component_offsets(self, callback=None):
-            // '''Returns the scanner/detector component offsets from nominal'''
-            // return self._handler.request(
-            //     PacketType.PROPERTY_GET, PropertyType.COMPONENT_OFFSETS,
-            //     callback=callback)
-
-            // returns BB6f so we'll see B6f here after packet Type in data
-
             Vector3 leftOffset = Vector3.zero;
             Vector3 rightOffset = Vector3.zero;
-
-            bool cancel = false;
-
-            UDPRequestCallback cb = (byte[] data, UDPRequestStatus status) =>
-            {
-                int i = 0;
-                if (data.Length < 1)
-                {
-                    Debug.Log("NO DATA");
-                    cancel = true;
-                }else if (data.Length == 1)
-                {
-                    Debug.Log("SOME DATA" + data[0]);
-                    cancel = true;
-                } else
-                {
-                    byte propertytype;
-                    data.ReadNextInt8(ref i, out propertytype);
-                    data.ReadNextVector3(ref i, out rightOffset);
-                    data.ReadNextVector3(ref i, out leftOffset);
-                }
-            };
-            
-            if (cancel)
-            {
-                Debug.Log("FAILED to retrieve component offsets, most likely not ready.");
-                yield break;
-            }
-
-            List<byte> datareq = new List<byte>() { (byte)udpInfo.PropertyType.COMPONENT_OFFSETS };
-
-            yield return udpClient.SendUDPRequest(new UDPRequest(udpInfo.PROPERTY_GET, cb, datareq));
-
-            float offsetL = (newIPD / 2);
-
-            Debug.Log("Got eye offsets: L: " + leftOffset.ToString("F4") + ", R: " + rightOffset.ToString("F4"));
 
             leftOffset.x = newOffsetR;
             rightOffset.x = newOffsetL;
@@ -118,7 +71,7 @@ namespace AdhawkApi
             List<byte> data = new List<byte>() { (byte)udpInfo.PropertyType.COMPONENT_OFFSETS };
             data.AddRange(rightOffset.ToBytes());
             data.AddRange(leftOffset.ToBytes());
-            yield return udpClient.SendUDPRequest(new UDPRequest(udpInfo.PROCEDURE_START, null, data));
+            yield return udpClient.SendUDPRequest(new UDPRequest(udpInfo.PROPERTY_SET, null, data));
         }
 
         /// <summary> Add a listener to the error handler callback event. </summary>
