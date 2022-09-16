@@ -8,6 +8,12 @@ This project is designed to run on a computer running Windows 64bit with a discr
 
 ---
 
+## Resources
+
+- [A general Environment/Project setup guide](https://adhawkmicrosystems.github.io/unity/HtN_EnvironmentSetup_UnityVR.html)
+- [VR development and eyetracking guide](https://adhawkmicrosystems.github.io/unity/HtN_GettingStarted_UnityVR.html)
+- [Adhawk SDK](https://adhawkmicrosystems.github.io/api/api.html)
+
 ## Requirements
 
 1. We recommend you install Unity Hub
